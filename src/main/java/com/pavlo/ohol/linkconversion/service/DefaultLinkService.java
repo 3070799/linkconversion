@@ -17,7 +17,7 @@ import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 
 @Service
 @AllArgsConstructor
-public class DefaultLinkService implements LinkService{
+public class DefaultLinkService implements LinkService {
 
     private final ApplicationSettings applicationSettings;
     private final LinkRepository linkRepository;
@@ -39,9 +39,9 @@ public class DefaultLinkService implements LinkService{
                 .build());
     }
 
-    private String generateShortLink(){
+    private String generateShortLink() {
         String generatedLink = randomAlphabetic(applicationSettings.getLinkSettings().getLinkLength());
-        if(linkRepository.findByShortURL(generatedLink).isPresent()){
+        if (linkRepository.findByShortURL(generatedLink).isPresent()) {
             return generateShortLink();
         }
         return generatedLink;

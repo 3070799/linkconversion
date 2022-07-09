@@ -11,9 +11,7 @@ import lombok.Getter;
 @Getter
 public enum ErrorDescription {
 
-    SHORT_LINK_NOT_FOUND(1, "Short link not found")
-
-    ;
+    SHORT_LINK_NOT_FOUND(1, "Short link not found");
 
     private final Integer code;
 

@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 public interface ConversionController {
 
-    ResponseEntity<String> getShortLink (String originalLink);
+    ResponseEntity<String> getShortLink(String originalLink);
 
     RedirectView redirectWithUsingRedirectView(String link);
 }
