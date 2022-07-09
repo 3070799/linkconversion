@@ -41,8 +41,7 @@ public class DefaultLinkService implements LinkService{
 
     private String generateShortLink(){
         String generatedLink = randomAlphabetic(applicationSettings.getLinkSettings().getLinkLength());
-        if(linkRepository.findAll().stream()
-                .anyMatch(l -> l.getShortURL().equals(generatedLink))){
+        if(linkRepository.findByShortURL(generatedLink).isPresent()){
             return generateShortLink();
         }
         return generatedLink;
