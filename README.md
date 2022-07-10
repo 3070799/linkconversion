@@ -4,7 +4,7 @@
 Порт и длина генерируемой ссылки конфигурируются в следующем файле:
 
 ```shell script
-src/main/resources/application.yaml
+src/main/resources/application.yml
 ```
 
 Запуск проекта осуществляется с помощью *“Run” в IDE*
