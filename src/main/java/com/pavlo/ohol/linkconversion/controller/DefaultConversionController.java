@@ -1,5 +1,6 @@
 package com.pavlo.ohol.linkconversion.controller;
 
+import com.pavlo.ohol.linkconversion.DTO.LinkRequest;
 import com.pavlo.ohol.linkconversion.config.ApplicationSettings;
 import com.pavlo.ohol.linkconversion.service.LinkService;
 import lombok.AllArgsConstructor;
@@ -19,11 +20,12 @@ public class DefaultConversionController implements ConversionController {
     private final LinkService linkService;
 
     @Override
-    @PostMapping(path = "/convert")
-    public ResponseEntity<String> getShortLink(@RequestBody String link) {
-        return ResponseEntity.ok(applicationSettings.getLinkSettings().getServerUrl() + linkService.create(link).getShortURL());
+    @PostMapping(path = "/api/convert")
+    public ResponseEntity<String> getShortLink(@RequestBody LinkRequest linkRequest) {
+        return ResponseEntity.ok(applicationSettings.getLinkSettings().getServerUrl() + linkService.create(linkRequest.getLink()).getShortURL());
     }
 
+    @Override
     @GetMapping("/{link}")
     public RedirectView redirectWithUsingRedirectView(@PathVariable String link) {
         return new RedirectView(linkService.findByShortLink(link).getOriginalUrl());

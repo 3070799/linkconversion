@@ -12,12 +12,18 @@ src/main/resources/application.yaml
 Конвертация ссылки осуществляется с помощью *POST* запроса по адресу:
 
 ```shell script
-http://localhost:8080/convert
+http://localhost:8080//api/convert
 ```
 
-В теле запроса нужно передать строку (ссылку которую нужно конвертировать)
+В теле запроса нужно передать JSON, пример:
 
-В ответе придет строка (сгенерированная короткая ссылка)
+```shell script
+{
+    "link":"https://can.ua/akkumulyatornaya-batareya-great-power-pg-12-7-2/p37854/"
+    }
+```
+
+В ответе придет сгенерированная короткая ссылка
 
 *REST API* защищенное *Basic* авторизаций
 

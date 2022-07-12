@@ -13,5 +13,5 @@ spring:
 linkConversion:
   linkSettings:
     serverUrl: http://localhost:${server.port}/
-    linkLength: 7
+    linkLength: 4
 
